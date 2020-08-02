@@ -15,7 +15,7 @@ ps=Hist_NER.ps
 
 # NORTH
 # Plot histogram
-gmt pshistogram tableNER1.txt -i4 -R-6000/6/0/15 -JX4.8i/2.4i -X3.6i \
+gmt pshistogram tableNER1.txt -i4 -R-6500/6/0/15 -JX4.8i/2.4i -X3.6i \
     --MAP_TICK_PEN_PRIMARY=thinner,dimgray \
     --MAP_GRID_PEN=thinnest,dimgray \
     --FONT_ANNOT_PRIMARY=11p,Helvetica,black \
@@ -25,8 +25,8 @@ gmt pshistogram tableNER1.txt -i4 -R-6000/6/0/15 -JX4.8i/2.4i -X3.6i \
     -BWSne+gsnow1 -Glightsteelblue1 \
     -D+f9p,Times-Roman,black -L0.1p,dimgray -Z1 -W250 -N0+pred -N1+pblue -N2+pgreen \
     -UBL/8.5c/-1.8c -K > $ps
-echo "-500 10 C" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
-echo "-6000 28 Southern segment" | gmt pstext -R -J -F+jBL+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-6200 13.5 C" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-1800 13 Southern segment" | gmt pstext -R -J -F+jBL+f11p,black -Gfloralwhite -W0.5p -O -K >> $ps
 # Add legend
 gmt pslegend -R -J -Dx0.5/-3.2+w6.0c+o-1.0/0.5c \
     -F+pthick+ithinner+gwhite \
@@ -38,22 +38,22 @@ EOF
 
 # CENTER
 # Plot histogram
-gmt pshistogram tableNER2.txt -i4 -R-6000/6/0/10 -JX4.8i/2.4i -Y7.5c\
+gmt pshistogram tableNER2.txt -i4 -R-6500/6/0/10 -JX4.8i/2.4i -Y7.5c\
     --MAP_TICK_PEN_PRIMARY=thinner,dimgray \
     --MAP_GRID_PEN=thinnest,dimgray \
     --FONT_ANNOT_PRIMARY=11p,Helvetica,black \
     --FONT_LABEL=11p,Helvetica,black \
-    -Bpxg500a1000f100+l"Bathymetry (m)" \
+    -Bpxg1000a1000f100+l"Bathymetry (m)" \
     -Bpyg5a2f2+l"Frequency"+u" %" -Bsyg2 \
     -BWSne+gsnow1 -Glightsteelblue1 \
-    -D+f9p,Times-Roman,black -L0.1p,dimgray -Z1 -W100 -N0+pred -N1+pblue -N2+pgreen \
+    -D+f9p,Times-Roman,black+r -L0.1p,dimgray -Z1 -W100 -N0+pred -N1+pblue -N2+pgreen \
     -O -K >> $ps
-echo "-500 7 B" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
-echo "-2700 13 Central segment" | gmt pstext -R -J -F+jBL+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-6200 8.5 B" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-1700 9 Central segment" | gmt pstext -R -J -F+jBL+f11p,black -Gfloralwhite -W0.5p -O -K >> $ps
 
 # SOUTH
 # Plot histogram
-gmt pshistogram tableNER3.txt -i4 -R-6000/6/0/15 -JX4.8i/2.4i -Y7.5c\
+gmt pshistogram tableNER3.txt -i4 -R-6500/6/0/15 -JX4.8i/2.4i -Y7.5c\
     --MAP_TICK_PEN_PRIMARY=thinner,dimgray \
     --MAP_GRID_PEN=thinnest,dimgray \
     --FONT_ANNOT_PRIMARY=11p,Helvetica,black \
@@ -65,8 +65,8 @@ gmt pshistogram tableNER3.txt -i4 -R-6000/6/0/15 -JX4.8i/2.4i -Y7.5c\
     -BWSne+t"Ninety East Ridge: histograms on bathymetry"+gsnow1 -Glightsteelblue1 \
     -D+f9p,Times-Roman,black -L0.1p,dimgray -Z1 -W250 -N0+pred -N1+pblue -N2+pgreen \
     -O -K >> $ps
-echo "-500 10 A" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
-echo "-2500 18 Northen segment" | gmt pstext -R -J -F+jBL+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-6200 13.5 A" | gmt pstext -R -J -F+jBR+f15p,black -Gfloralwhite -W0.5p -O -K >> $ps
+echo "-1700 13 Northen segment" | gmt pstext -R -J -F+jBL+f11p,black -Gfloralwhite -W0.5p -O -K >> $ps
 # Add GMT logo
 
 gmt logo -Dx6.0/0.0+o-0.0c/-17.5c+w2c -O >> $ps
